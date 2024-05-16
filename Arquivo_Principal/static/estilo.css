@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    align-items: center;
+    margin-right: 200px;
+
+}
+
+h2, h1 {
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+button {
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #5c67f2;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4a54e1;
+}
+
+a {
+    color: #5c67f2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    color: red;
+    margin-top: 5px;
+}
+.voltar{
+    display: inline-block;
+    background-color: rgb(238, 238, 238);
+    color: white;
+    text-decoration: none;
+    margin-left: 250px;
+    
+}
+.voltar:hover{
+    background-color: #aaaaaa;
+}
+
+.fonte {
+    color: rgb(0, 0, 0);
+}
+
+
+.agendar{    
+        background-color: hsl(238, 99%, 59%);
+        color: white;
+        border: none;
+        cursor: pointer;
+}
+.agendar:hover {
+    background-color: #000dc7;
+}

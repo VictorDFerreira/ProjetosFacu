@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendamentos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <style>
+        .janela-agendamentos {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        .agendamento {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1>Agendamentos</h1>
+    </header>
+
+    <!-- Formulário para criar um novo agendamento -->
+    <form method="POST" action="/home">
+        <label for="date">Data:</label>
+        <input type="date" id="date" name="date" required><br><br>
+        <label for="period">Período:</label>
+        <input type="text" id="period" name="period" required><br><br>
+        <label for="time">Hora:</label>
+        <input type="time" id="time" name="time" required><br><br>
+        <label for="service">Serviços:</label>
+        <select id="service" name="service" multiple required>
+            <option value="Service1">Service 1</option>
+            <option value="Service2">Service 2</option>
+            <!-- Adicione mais opções conforme necessário -->
+        </select><br><br>
+        <button type="submit">Agendar</button>
+    </form>
+
+    <!-- Janela para exibir os agendamentos -->
+    <div class="janela-agendamentos">
+        <h2>Lista de Agendamentos</h2>
+        <ul>
+            {% for appointment in appointments %}
+                <li class="agendamento">
+                    Data: {{ appointment.date }}, Período: {{ appointment.period }}, Hora: {{ appointment.time }}, Serviços: {{ appointment.services }}
+                </li>
+            {% else %}
+                <li>Nenhum agendamento encontrado.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

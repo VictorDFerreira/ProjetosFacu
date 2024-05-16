@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="br-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body>
+    <div clsas="imagem"></div>
+    <div class="container">
+           <h2>Cadastro</h2>
+       <button class="voltar"><a href="/login" class="fonte">Voltar</a></button>
+        <form method="POST" action="/register">
+            <label for="first_name">Nome:</label>
+            <input type="text" id="first_name" name="first_name" required><br><br>
+            <label for="last_name">Sobrenome:</label>
+            <input type="text" id="last_name" name="last_name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <label for="confirm_password">Confirmar Senha:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>
