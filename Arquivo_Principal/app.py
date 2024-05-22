@@ -41,6 +41,7 @@ def inicio():
             cursor.close()
             conn.close()
             return render_template('confirmar.html', date=date, time=time, services=services.split(', '))
+            return render_template('inicio.html', date=date, time=time, services=services.split(', '))
     return render_template('home.html')
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -57,6 +58,7 @@ def login():
             conn.close()
             if stored_password and bcrypt.checkpw(password, stored_password[0].encode('utf-8')):
                 return render_template ('home.html')
+                return render_template ('inicio.html')
             else:
                 flash('Invalid username or password')
     return render_template('login.html')

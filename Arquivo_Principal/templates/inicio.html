@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/estilos.css">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <div><img class="logo" src="../static/images/tesoura.png" alt="logo do site"></div>
+        <div class="menu">
+            <div>Home</div>
+            <div>Contatos</div>
+            <div>Agenda</div>
+        </div>
+        <div class="perfil">
+            <div>Perfil</div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Confirmação de Agendamento</h1>
+        <p>Data: {{ date }}</p>
+        <p>Horário: {{ time }}</p>
+        <p>Serviços:</p>
+        <ul>
+            {% for service in services %}
+            <li>{{ service }}</li>
+            {% endfor %}
+        </ul>
+    <button>
+        <a href="/home"> + </a>
+    </button>
+</div>
+</body>
+</html>
+</html>

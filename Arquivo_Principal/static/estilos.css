@@ -1,0 +1,57 @@
+body {
+    background-color: antiquewhite;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(38, 1, 64);
+    padding: 30px;
+    position: relative; /* Para permitir o posicionamento absoluto dos itens internos */
+    text-align: center; /* Para centralizar a logo */
+}
+
+.logo {
+    width: 100px; /* Largura da logo */
+    height: auto; /* Altura ajustada automaticamente */
+    margin: 0 auto; /* Centralizar horizontalmente */
+}
+
+.menu {
+    position: absolute; /* Posicionamento absoluto em relação ao cabeçalho */
+    top: 0; /* Distância do topo do cabeçalho */
+    right: 0; /* Distância da direita do cabeçalho */
+    padding: 10px 20px; /* Adiciona espaçamento interno */
+    margin-top: 10px; /* Adiciona margem superior */
+    margin-right: 10px;
+}
+
+.menu div {
+    display: inline-block; /* Exibe os itens de menu em linha */
+    margin-left: 10px; /* Espaçamento entre os itens de menu */
+}
+.perfil{
+    position: absolute; /* Posicionamento absoluto em relação ao cabeçalho */
+    top: 0; /* Distância do topo do cabeçalho */
+    left: 0;/* Distância da direita do cabeçalho 
+    padding: 10px 20px; /* Adiciona espaçamento interno */
+    margin-top: 20px; /* Adiciona margem superior */
+    margin-left: 10px;
+}
+.container{
+    color: rgb(77, 77, 77);
+    width: 80%;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+}
+button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
