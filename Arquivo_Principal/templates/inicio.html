@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/estilos.css">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <div><img class="logo" src="../static/images/logo.png" alt="logo do site"></div>
+        <div class="menu">
+            <div>Home</div>
+            <div>Contatos</div>
+            <div>Agenda</div>
+        </div>
+        <div class="perfil">
+            <div>Perfil</div>
+        </div>
+    </header>
+    <div class="container">
+
+        <ul>
+            {% for service in services %}
+            <li>{{ service }}</li>
+            {% endfor %}
+        </ul>
+        
+        <h2>Lista de Agendamentos</h2>
+        <ul>
+            {% for appointment in appointments %}
+            <li>
+               <br> Data: {{ appointment[1] }} <br>Período: {{ appointment[2] }} <br> Hora: {{ appointment[3] }} <br> Serviços: {{ appointment[4] }}
+                <form method="POST" action="{{ url_for('delete_appointment', appointment_id=appointment[0]) }}">
+                    <button class="cancelar" type="submit">Cancelar</button>
+                </form>
+                
+                <a href="{{ url_for('edit_appointment', appointment_id=appointment[0]) }}"> <button>Editar</button></a>
+            
+            </li>
+            
+            {% else %}
+                <li>Nenhum agendamento encontrado.</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <a href="/home">
+            <button class="adicionar">Agendar</button>
+        </a>        
+    </div>
+</body>
+</html>

@@ -3,11 +3,11 @@ document.getElementById('period').addEventListener('change', function() {
     timeSelect.innerHTML = '';
     const period = this.value;
     let times = [];
-    if (period === 'morning') {
+    if (period === 'Manha') {
         times = ['07:00', '08:00', '09:00', '10:00', '11:00'];
-    } else if (period === 'afternoon') {
+    } else if (period === 'Tarde') {
         times = ['13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
-    } else if (period === 'evening') {
+    } else if (period === 'Noite') {
         times = ['19:00', '20:00', '21:00'];
     }
     times.forEach(time => {

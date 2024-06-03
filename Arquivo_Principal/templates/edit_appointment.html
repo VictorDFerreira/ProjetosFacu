@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Agendamento</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Agendamento</h1>
+        <form method="POST" action="{{ url_for('edit_appointment', appointment_id=appointment[0]) }}">
+            <label for="date">Data:</label>
+            <input type="date" id="date" name="date" value="{{ appointment[1] }}" required><br><br>
+            
+            <label for="period">Período:</label>
+            <select id="period" name="period">
+                <option value="Manha" {% if appointment[2] == 'Manha' %}selected{% endif %}>Manhã</option>
+                <option value="Tarde" {% if appointment[2] == 'Tarde' %}selected{% endif %}>Tarde</option>
+                <option value="Noite" {% if appointment[2] == 'Noite' %}selected{% endif %}>Noite</option>
+            </select><br><br>
+            
+            <label for="time">Horário:</label>
+            <select id="time" name="time">
+                <!-- Aqui será preenchido dinamicamente com JavaScript -->
+            </select><br><br>
+
+            <label>Serviços:</label><br>
+            <div class="service">
+                <input type="checkbox" name="service" value="Sobrancelha" {% if 'Sobrancelha' in appointment[4].split(', ') %}checked{% endif %}> Sobrancelha<br>
+            </div>
+            <div class="service">
+                <input type="checkbox" name="service" value="Barba" {% if 'Barba' in appointment[4].split(', ') %}checked{% endif %}> Barba<br>
+            </div>
+            <div class="service">
+                <input type="checkbox" name="service" value="Corte" {% if 'Corte' in appointment[4].split(', ') %}checked{% endif %}> Corte<br>
+            </div>
+            <div class="service">
+                <input type="checkbox" name="service" value="Corte + Sobrancelha" {% if 'Corte + Sobrancelha' in appointment[4].split(', ') %}checked{% endif %}> Corte + Sobrancelha<br>
+            </div>
+            <div class="service">
+                <input type="checkbox" name="service" value="Corte + Barba" {% if 'Corte + Barba' in appointment[4].split(', ') %}checked{% endif %}> Corte + Barba<br>
+            </div>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
